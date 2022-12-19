@@ -40,10 +40,18 @@ public class SecurityConfig{
                     auth.requestMatchers("/user/getAll").hasAuthority("ADMIN");
 
 
-                }).addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
+                }).
+        logout(logout -> logout
+                .logoutUrl("/logout"))
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
+
                 .exceptionHandling().and().sessionManagement()
+
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and().build();
+
+                .and()
+
+                .build();
 
                 //.httpBasic(Customizer.withDefaults()).build();
     }
