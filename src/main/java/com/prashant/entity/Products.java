@@ -20,7 +20,7 @@ public class Products {
     private String name;
     private String desc;
     private String imageUrl;
-    private Categorys categorys;
+//    private Categorys categorys;
 
     public Products(){}
 }

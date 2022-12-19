@@ -29,7 +29,7 @@ public class ProductController {
         return productService.createProduct(products);
     }
 
-    @GetMapping
+    @GetMapping("/getAll")
     public List<Products> productsList(){
         return productService.products();
     }

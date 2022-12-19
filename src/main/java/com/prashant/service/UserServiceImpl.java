@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         User optionalUser = userDao.findByUsername(username);
-
+        System.out.println("optionalUser = " + optionalUser);
         org.springframework.security.core.userdetails.User userDetails = null;
         if (optionalUser == null){
             System.out.println(" = user is null" );
